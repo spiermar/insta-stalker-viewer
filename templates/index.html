@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://twitter.github.com/bootstrap/examples/fluid.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Spots.io Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <style type="text/css"></style></head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          {% set i = 0 %}
+          {% for item in results %}
+          {% if (i % 4) == 0 %}
+          <div class="row-fluid">
+          {% endif %}
+            <div class="span3">
+              <h3><a href="http://instagram.com/{{ item.user }}" target="_blank">{{ item.user }}</a></h3>
+              <p><a href="{{ item.link }}" target="_blank"><img src="{{ item.image }}"></a></p>
+              <p>{{ item.date }}</p>
+            </div><!--/span-->
+          {% if (i % 4) == 3 %}
+          {% set i = i + 1 %}
+          </div><!--/row-->
+          {% endif %}
+          {% endfor %}
+        </div><!--/span-->
+      </div><!--/row-->
+      <hr>
+      <div class="row-fluid">
+        <div class="btn-group">
+          <a href="?page={{ page - 1 }}" class="btn"><i class="icon-backward"></i> Previous</a>
+          <a href="?page={{ page + 1 }}" class="btn">Next <i class="icon-forward"></i></a>
+        </div>
+      </div>
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="static/js/bootstrap.min.js"></script>
+
+</body></html>
