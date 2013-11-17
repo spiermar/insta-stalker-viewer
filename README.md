@@ -8,7 +8,7 @@ cherrypy.cfg
 
 ```
 [/]
-tools.staticdir.root = '/Users/mspier/Workspace/python/cherry/insta-stalker-viewer'
+tools.staticdir.root = '/insta-stalker-viewer'
 tools.staticdir.on = True
 tools.staticdir.dir = ''
 
