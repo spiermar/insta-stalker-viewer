@@ -1,7 +1,7 @@
 insta-stalker-viewer
-==============
+====================
 
-Simple webapp to help visualize insta-stalker results.
+Easily visualize galleries from a standard XML results file.
 
 cherrypy.cfg
 ------------
